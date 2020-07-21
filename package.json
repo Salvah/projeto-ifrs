@@ -1,10 +1,19 @@
 {
   "name": "projeto-ifrs",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "= <=>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
   "devDependencies": {
     "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^2.15.0",
+    "express": "^4.17.1"
   }
 }
