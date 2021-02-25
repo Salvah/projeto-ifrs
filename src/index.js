@@ -17,7 +17,7 @@ app.post("/esp8266", (req, res) => {
   const { temperature, humidity } = req.body;
   const timestamp = format(new Date(), "dd/MM/yyyy HH:mm");
   data.push({ temperature, humidity, timestamp });
-  res.send("RESPOSTA: OK");
+  res.send("RESPOSTA: OK1");
 });
 
 app.get("/data", (req, res) => {
