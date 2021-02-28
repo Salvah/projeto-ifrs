@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 app.get("/charts/humidity", (req, res) => {
   const humidity = [];
   const timestamp = [];
-  data.forEach((d) => {
+  data.slice(-60).forEach((d) => {
     humidity.push(d.humidity);
     timestamp.push(d.timestamp.substr(11, 5));
   });
@@ -49,7 +49,7 @@ app.get("/charts/humidity", (req, res) => {
 app.get("/charts/temperature", (req, res) => {
   const temperature = [];
   const timestamp = [];
-  data.forEach((d) => {
+  data.slice(-60).forEach((d) => {
     temperature.push(d.temperature);
     timestamp.push(d.timestamp.substr(11, 5));
   });
@@ -64,7 +64,7 @@ app.get("/charts/temperature", (req, res) => {
 app.get("/charts/uv", (req, res) => {
   const uv = [];
   const timestamp = [];
-  data.forEach((d) => {
+  data.slice(-60).forEach((d) => {
     uv.push(d.uv);
     timestamp.push(d.timestamp.substr(11, 5));
   });
@@ -79,7 +79,7 @@ app.get("/charts/uv", (req, res) => {
 app.get("/charts/pv", (req, res) => {
   const pv = [];
   const timestamp = [];
-  data.forEach((d) => {
+  data.slice(-60).forEach((d) => {
     pv.push(d.pv);
     timestamp.push(d.timestamp.substr(11, 5));
   });
