@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { format } = require("date-fns");
 
-const pt = require("date-fns/locales/pt");
+const ptBRLocale = require("date-fns/locale/pt-BR");
 
 const data = [];
 
@@ -20,7 +20,9 @@ app.use(cors());
 
 app.post("/esp8266", (req, res) => {
   const { temperature, humidity, uv, pv } = req.body;
-  const timestamp = format(new Date(), "dd/MM/yyyy HH:mm");
+  const timestamp = format(new Date(), "dd/MM/yyyy HH:mm", {
+    locale: ptBRLocale,
+  });
   data.push({ temperature, humidity, uv, pv, timestamp });
   res.send("RESPOSTA: OK");
 });
