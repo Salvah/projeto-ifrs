@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const { format } = require("date-fns");
 
+const pt = require("date-fns/locales/pt");
+
 const data = [];
 
 const app = express();
