@@ -14,9 +14,9 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/esp8266", (req, res) => {
-  const { temperature, humidity } = req.body;
+  const { temperature, humidity, uv, pv } = req.body;
   const timestamp = format(new Date(), "dd/MM/yyyy HH:mm");
-  data.push({ temperature, humidity, timestamp });
+  data.push({ temperature, humidity, uv, pv, timestamp });
   res.send("RESPOSTA: OK");
 });
 
