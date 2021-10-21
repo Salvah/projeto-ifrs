@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 
 app.get("/clear", (req, res) => {
   data.length = 0;
+  res.send("Dados zerados!");
 });
 
 app.get("/charts/humidity", (req, res) => {
