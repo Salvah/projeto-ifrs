@@ -35,6 +35,10 @@ app.get("/", (req, res) => {
   res.send("OK");
 });
 
+app.get("/clear", (req, res) => {
+  data.length = 0;
+});
+
 app.get("/charts/humidity", (req, res) => {
   const humidity = [];
   const timestamp = [];
